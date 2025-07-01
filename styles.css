@@ -447,10 +447,10 @@ footer p:nth-child(2) {
     }
     
     /* Skills & Projects */
-    .box1, .box {
+    .box1, .box2 {
         flex-direction: column;
     }
-    .card1, .card {
+    .card1, .card2 {
         width: 90%;
         margin: 15px auto;
     }
