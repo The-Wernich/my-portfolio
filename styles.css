@@ -5,6 +5,10 @@
     box-sizing: border-box;
 }
 
+html {
+    scroll-behavior: smooth;
+}
+
 .hero {
     height: 100vh;
     width: 100%;
@@ -24,46 +28,46 @@ nav {
 
 .logo {
     color: white;
-    font-size: 35px;
+    font-size: 60px;
     letter-spacing: 1px;
     cursor: pointer;
 }
 
 span {
-    color: #68cf13;
+    color: #558f1b;
 }
 
 nav ul li {
     list-style-type: none;
     display: inline-block;
     padding: 10px 25px;
+    align-items: center;
+    position: relative;
 }
 
 nav ul li a {
     color: white;
     text-decoration: none;
+    font-size: 25px;
     font-weight: bold;
     text-transform: capitalize;
+    align-items: center;
+}
+
+nav ul li:not(:last-child)::after {
+    content: "|";
+    position: absolute;
+    right: -10px;
+    top: 50%;
+    transform: translateY(-50%);
+    color: white;
+    font-weight: bold;
+    margin: 0; 
 }
 
 nav ul li a:hover {
-    color: red;
+    color: #558f1b;
     transition: .4s;
-}
-
-.btn {
-    background-color: red;
-    color: white;
-    text-decoration: none;
-    border: 2px solid transparent;
-    font-weight: bold;
-    padding: 10px 25px;
-    border-radius: 30px;
-    transition: transform .4s;
-}
-
-.btn:hover {
-    transform: scale(1.2);
 }
 
 .content {
@@ -76,57 +80,23 @@ nav ul li a:hover {
 h1 {
     color: white;
     margin: 20px 0px 20px;
-    font-size: 75px;
+    font-size: 90px;
 }
 h3 {
     color: white;
-    font-size: 25px;
+    font-size: 40px;
     margin-bottom: 50px;
 }
 h4 {
     color: #949191;
     letter-spacing: 2px;
-    font-size: 20px;
-}
-
-.newsletter form {
-    width: 380px;
-    max-width: 100%;
-    position: relative;
-}
-.newsletter form input:first-child {
-    display: inline-block;
-    width: 100%;
-    padding: 14px 130px 14px 15px;
-    border: 2px solid #f9004d;
-    outline: none;
-    border-radius: 30px;
-}
-.newsletter form input:last-child {
-    position: absolute;
-    display: inline-block;
-    outline: none;
-    border: none;
-    padding: 10px 30px;
-    border-radius: 30px;
-    background-color: #f9004d;
-    color: white;
-    box-shadow: 0px 0px 5px #000, 0px 0px 15px #858585;
-    top: 6px;
-    right: 6px;
-}
-.newsletter form input:last-child:hover {
-    background-color: #191919;
-    color: white;
-    border: 2px solid #f9004d;
-    cursor: pointer;
-    top: 4px;
+    font-size: 30px;
 }
 
 .about {
     width: 100%;
     padding: 100px 0px;
-    background-color: #191919;
+    background-color: #101010;
 }
 .about img {
     height: auto;
@@ -164,7 +134,7 @@ h4 {
     margin-bottom: 45px;
 }
 button {
-    background-color: #f9004d;
+    background-color: #558f1b;
     color: white;
     text-decoration: none;
     border: 2px solid transparent;
@@ -175,14 +145,71 @@ button {
 }
 button:hover {
     background-color: transparent;
-    border: 2px solid #f9004d;
+    border: 2px solid #558f1b;
     cursor: pointer;
 }
 
-.service {
+.skills {
+    background: #191919;
+    width: 100%;
+    padding: 10px 0px;
+}
+
+.box1 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    min-height: 150px;
+    padding-bottom: 20px;
+}
+
+.card1 {
+    height: 450px;
+    width: 500px;
+    padding: 20px 35px;
+    background: #101010;
+    border-radius: 20px;
+    margin: 15px;
+    position: relative;
+    overflow: hidden;
+    text-align: center;
+}
+
+.card1 i {
+    font-size: 250px;
+    display: block;
+    text-align: center;
+    margin: 25px 0px;
+    color: #558f1b;
+}
+
+.card1 h5 {
+    color: white;
+    font-size: 23px;
+    margin-bottom: 20px;
+}
+
+.card1 .button {
+    background-color: #558f1b;
+    color: white;
+    text-decoration: none;
+    border: 2px solid transparent;
+    font-weight: bold;
+    padding: 9px 22px;
+    border-radius: 30px;
+    transition: .4s;
+}
+
+.card1 .button:hover {
+    background-color: transparent;
+    border: 2px solid #558f1b;
+    cursor: pointer;
+}
+
+.projects {
     background: #101010;
     width: 100%;
-    padding: 100px 0px;
+    padding: 10px 0px;
 }
 
 .title {
@@ -193,16 +220,17 @@ button:hover {
     text-align: center;
 }
 
-.box {
+.box2 {
     display: flex;
     justify-content: center;
     align-items: center;
     min-height: 400px;
+    padding-bottom: 20px;
 }
 
-.card {
-    height: 365px;
-    width: 335px;
+.card2 {
+    height: 400px;
+    width: 500px;
     padding: 20px 35px;
     background: #191919;
     border-radius: 20px;
@@ -212,15 +240,15 @@ button:hover {
     text-align: center;
 }
 
-.card i {
+.card2 i {
     font-size: 50px;
     display: block;
     text-align: center;
     margin: 25px 0px;
-    color: #f9004d;
+    color: #558f1b;
 }
 
-h5 {
+.card2 h5 {
     color: white;
     font-size: 23px;
     margin-bottom: 15px;
@@ -231,10 +259,12 @@ h5 {
     font-size: 16px;
     line-height: 27px;
     margin-bottom: 25px;
+    display: block;
+    max-height: fit-content;
 }
 
-.card .button {
-    background-color: #f9004d;
+.card2 .button {
+    background-color: #558f1b;
     color: white;
     text-decoration: none;
     border: 2px solid transparent;
@@ -244,15 +274,15 @@ h5 {
     transition: .4s;    
 }
 
-.card .button:hover {
+.card2 .button:hover {
     background-color: transparent;
-    border: 2px solid #f9004d;
+    border: 2px solid #558f1b;
     cursor: pointer;
 }
 
-.contact-me {
+#contact-me {
     width: 100%;
-    height: 290px;
+    height: 500px;
     background: #191919;
     display: flex;
     align-items: center;
@@ -260,28 +290,60 @@ h5 {
     justify-content: center;
 }
 
-.contact-me p {
-    color: white;
-    font-size: 30px;
-    font-weight: bold;
-    margin-bottom: 25px;
+.newsletter form {
+    width: 650px;
+    max-width: 100%;
+    position: relative;
+    padding: 0 15px; /* Small side padding on mobile */
+    box-sizing: border-box;
 }
 
-.contact-me .button-two {
-    background-color: #f9004d;
-    color: white;
-    text-decoration: none;
-    border: 2px solid transparent;
-    font-weight: bold;
-    padding: 13px 30px;
+.newsletter form textarea {
+    width: 100%;
+    min-height: 100px;
+    max-height: 300px;
+    padding: 25px 30px; /* Keep your original padding */
+    border: 2px solid #558f1b;
+    outline: none;
     border-radius: 30px;
-    transition: .4s;
+    white-space: pre-wrap;
+    word-wrap: break-word;
+    overflow-y: auto;
+    resize: none;
+    box-sizing: border-box; /* This is the key line */
 }
 
-.contact-me .button-two:hover {
-    background-color: transparent;
-    border: 2px solid #f9004d;
+.newsletter form input:nth-child(4) {
+    display: inline-block;
+    width: 100%;
+    height: 50px;
+    padding: 14px 130px 14px 15px;
+    border: 2px solid #558f1b;
+    outline: none;
+    border-radius: 30px;
+    margin-top: 5px;
+}
+
+.newsletter form input:last-child {
+    position: absolute;
+    display: inline-block;
+    outline: none;
+    border: none;
+    padding: 12px 30px;
+    border-radius: 30px;
+    background-color: #558f1b;
+    color: white;
+    box-shadow: 0px 0px 5px #191919, 0px 0px 15px #858585;
+    top: 115px;
+    right: 20px;
+}
+
+.newsletter form input:last-child:hover {
+    background-color: #191919;
+    color: white;
+    border: 2px solid #558f1b;
     cursor: pointer;
+    bottom: 5px;
 }
 
 footer {
@@ -319,9 +381,9 @@ footer p:nth-child(2) {
     display: flex;
     align-items: center;
     justify-content: center;
-    background: #f9004d;
+    background: #558f1b;
     border-radius: 50%;
-    margin: 22px 10px;
+    margin: 20px 10px;
     color: white;
     text-decoration: none;
     font-size: 20px;
@@ -334,7 +396,108 @@ footer p:nth-child(2) {
 
 .end {
     position: absolute;
-    color: #f9004d;
+    color: #558f1b;
     bottom: 35px;
     font-size: 14px;
 }
+
+
+@media (max-width: 768px) {
+    /* Navigation - Mobile Optimized */
+    nav {
+        flex-direction: column;
+        padding: 25px 5%;
+        text-align: center;
+    }
+    nav ul {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        gap: 15px; /* Perfect equal spacing */
+        padding-top: 20px;
+        margin: 15px auto 0;
+    }
+    nav ul li {
+        padding: 10px 0; /* Preserves your tap target size */
+    }
+    
+    /* Hero Section */
+    .content {
+        left: 5%;
+        text-align: center;
+    }
+    h1 {
+        font-size: 50px;
+    }
+    h3 {
+        font-size: 20px;
+    }
+    
+    /* About Section */
+    .main {
+        flex-direction: column;
+    }
+    .about-text {
+        width: 100%;
+        margin-top: 30px;
+    }
+    .about img {
+        width: 100%;
+        max-width: 430px;
+    }
+    
+    /* Skills & Projects */
+    .box1, .box {
+        flex-direction: column;
+    }
+    .card1, .card {
+        width: 90%;
+        margin: 15px auto;
+    }
+    .title {
+        width: 100%;
+        font-size: 50px;
+    }
+    
+    /* Contact Form */
+    #contact-me {
+        height: auto;
+        padding: 60px 0;
+    }
+    .newsletter form input:last-child {
+        position: relative;
+        top: auto;
+        right: auto;
+        margin: 15px auto 0;
+        width: 100%;
+    }
+    
+    /* Footer */
+    footer {
+        height: auto;
+        padding: 60px 0;
+    }
+    footer p:nth-child(2) {
+        width: 90%;
+    }
+}
+
+/* Smaller Mobile Devices */
+@media (max-width: 480px) {
+    .content {
+        top: 45%;
+    }
+    h1 {
+        font-size: 40px;
+    }
+    .about-text h2 {
+        font-size: 50px;
+    }
+    .newsletter form textarea {
+        padding: 20px 15px;
+    }
+    .newsletter form input:nth-child(4) {
+        padding: 14px 15px;
+    }
+}
+
