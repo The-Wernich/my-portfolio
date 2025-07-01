@@ -7,7 +7,7 @@ body {
     display: flex;
     min-height: 100vh;
     background-color: #cccccc;
-    background-image: url(https://miro.medium.com/v2/resize:fit:1000/1*cOL0aXd1s0YJFzwRu0CkuQ.jpeg);
+    background-image: src="background-image.jpg" atl="background-image";
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
