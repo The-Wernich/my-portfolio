@@ -7,7 +7,7 @@ body {
     display: flex;
     min-height: 100vh;
     background-color: #cccccc;
-    background-image: url=('background-image.png') atl="background-image";
+    background-image: url('background-image.png');
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
