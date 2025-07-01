@@ -1,1 +1,411 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CSS Flexbox & Grid Documentation </title>
+    <link rel="stylesheet" href="styles.css"/>
+</head>
+<body>
+<!-- ===== Navigation Bar ===== -->
+    <nav id="navbar">
+        <header>CSS Flexbox & Grid Documentation</header>
+        <ul>
+            <li><a class="nav-link" href="#Introduction">Introduction</a></li>
+            <li><a class="nav-link" href="#What_You'll_Learn">What You'll Learn</a></li>
+            <li><a class="nav-link" href="#Flexbox_vs_Grid">Flexbox vs Grid</a></li>
+            <li><a class="nav-link" href="#Flexbox_Container">Flexbox Container</a></li>
+            <li><a class="nav-link" href="#Flexbox_Items">Flexbox Items</a></li>
+            <li><a class="nav-link" href="#Grid_Container">Grid Container</a></li>
+            <li><a class="nav-link" href="#Grid_Items">Grid Items</a></li>
+            <li><a class="nav-link" href="#Reference">Reference</a></li>
+        </ul>
+    </nav><br>
+<!-- ===== End Of Navigation Bar ===== -->
 
+<!-- ===== Start Of Introduction ===== -->
+    <main id="main-doc">
+        <section class="main-section" id="Introduction">
+            <fieldset>
+            <legend><header>Introduction</header></legend>
+            <article>
+            <p>
+            CSS Flexbox (Flexible Box Layout) and Grid (CSS Grid Layout) are two powerful layout systems in modern web design.
+            They provide efficient ways to design complex, responsive layouts without relying on floats or positioning hacks.
+            </p>
+            <ul>
+                <li>Flexbox excels at 1-dimensional layouts (rows or columns), 
+                    making it ideal for aligning and distributing space among items in a container 
+                    (e.g., navigation menus, card layouts).
+                </li>
+                <li>
+                    Grid is designed for 2-dimensional layouts (rows and columns), 
+                    perfect for building entire page structures (e.g., dashboards, image galleries).
+                </li>
+            </ul>
+            </article>   
+        </fieldset>
+        </section><br>
+<!-- ===== End Of Introduction ===== -->
+
+<!-- ===== Start Of What You'll Learn ===== -->
+        <section class="main-section" id="What_You'll_Learn">
+            <fieldset>
+                <legend><header>What You'll Learn</header></legend>
+            <article>
+                <h4>This documentation covers:</h4>
+                <ul>
+                    <li>
+                        Key differences between Flexbox and Grid.
+                    </li>
+                    <li>
+                        How to define containers and items for both systems.
+                    </li>
+                    <li>
+                        Practical examples to reinforce your understanding.
+                    </li>
+                </ul>
+
+                <p>
+                    By the end, you’ll be able to confidently choose between Flexbox and Grid—or combine them—for any layout challenge.
+                </p>
+            </article>
+        </fieldset>
+        </section><br>
+<!-- ===== End Of What You'll Learn ===== -->
+
+<!-- ===== Start Of Flexbox vs Grid ===== -->
+        <section class="main-section" id="Flexbox_vs_Grid">
+            <fieldset>
+            <legend><header>Flexbox vs Grid</header></legend>
+            <article>
+                <p>
+                    While both Flexbox and Grid are modern CSS layout systems, they serve different purposes. 
+                    <strong>Flexbox</strong> focuses on arranging items in a single dimension (row or column), 
+                    while <strong>Grid</strong> provides precise control over two-dimensional layouts (rows and columns simultaneously).
+                </p>
+                <ul> 
+                    <li> 
+                        <strong>Use Flexbox when:</strong>
+                    <ul>
+                        <li>Aligning items in a row <em>or</em> column (e.g., navigation bars, card lists).</li>
+                        <li>Distributing space dynamically within a container (e.g., centering content)</li>
+                    </ul>
+                  </li>
+                </ul>
+
+                <ul>
+                    <li>
+                        <strong>Use Grid when:</strong>
+                        <ul>
+                            <li>Designing complex layouts with overlapping areas (e.g., dashboards, image galleries).</li>
+                            <li>Needing explicit control over both rows and columns (e.g., magazine-style designs).</li>
+                        </ul>
+                    </li>
+                </ul>
+                <p>
+                    <strong>Live Example Code: Combining Flexbox and Grid</strong>
+                    <pre><code>
+                        .container {
+                            display: grid;
+                            grid-template-columns: 1fr 1fr; /* 2-column grid */
+                          }
+                          
+                          .item {
+                            display: flex;
+                            justify-content: center; /* Flexbox centers content inside grid cells */
+                          }
+                    </code></pre>
+                    <div class="live-demo" id="flex-grid">
+                        <div class="container-flex-grid">
+                            <div class="justified-item">Item 1 (centered)</div>
+                            <div class="justified-item">Item 2 (centered)</div>
+                            <div class="justified-item">Item 3 (centered)</div>
+                            <div class="justified-item">Item 4 (centered)</div>
+                        </div>
+                    </div>
+                </p>
+            </article>  
+        </fieldset>  
+        </section><br>
+<!-- ===== End Of Flexbox vs Grid ===== -->
+
+<!-- ===== Start Of Flexbox Container ===== -->
+
+        <section class="main-section" id="Flexbox_Container">
+            <fieldset>
+            <legend><header>Flexbox Container</header></legend>
+            <article>
+                <p>A Flexbox layout starts with a <strong>container</strong> (parent element).
+                    When you set <code>display: flex</code>, all direct children become 
+                    <strong>flex items</strong> that follow flexbox rules.
+                </p>
+                <h4>Key Flex-Container Properties:</h4>
+                <ul>
+                    <li>
+                        <strong><code>flex-direction:</code></strong>
+                        <ul>
+                            <li>Controls the flow of items: row (left-to-right) or column (top-to-bottom).</li>
+                            <li>Values: <code>row | row-reverse | column | column-reverse</code></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <strong><code>justify-content:</code></strong>
+                        <ul>
+                            <li>Aligns items <em>along the main axis</em> (horizontal for rows, vertical for columns).</li>
+                            <li>Values: <code>flex-start | center | space-between | space-around</code></li>
+                        </ul>
+                    </li>
+                </ul>
+                <h4>Live Example Code: Flexbox Container</h4>
+                <pre><code>.container {
+                    display: flex;
+                    flex-direction: row;
+                    justify-content: space-between;
+                    gap: 10px;
+                }</code></pre>
+                
+                <div class="live-demo" id="flex-container">
+                  <div class="container-flex-container">
+                    <div class="flex-container-item">Item 1</div>
+                    <div class="flex-container-item">Item 2</div>
+                    <div class="flex-container-item">Item 3</div>
+                  </div>
+                </div>
+                <h4>When to Use:</h4>
+                <ul class="use-cases">
+                    <li>Building navigation menus</li>
+                    <li>Aligning form controls</li>
+                    <li>Creating responsive card layouts</li>
+                </ul>
+            </article>
+        </fieldset>
+        </section><br>
+
+<!-- ===== End Of Flexbox Container ===== -->
+
+<!-- ===== Start Of Flexbox Items ===== -->
+
+        <section class="main-section" id="Flexbox_Items">
+            <fieldset>
+            <legend><header>Flexbox Items</header></legend>
+            <article>
+                <p>  While the flex container controls overall layout behavior, 
+                    <strong>flex items</strong> (direct children) can be individually adjusted with specialized properties. 
+                    These properties allow fine-tuned control over sizing, alignment, 
+                    and ordering - enabling responsive layouts where some items behave differently than others in the same container.
+                </p>
+                <h4>Key Flex-Item Properties:</h4>
+                <ul>
+                    <li>
+                        <strong><code>flex-grow:</code></strong>
+                        <ul>
+                            <li>Controls how much an item grows relative to others when extra space exists.</li>
+                            <li>Default: <code>0</code> (no growing).</li>
+                        </ul>
+                    </li>
+                    <li>
+                        <strong><code>flex-shrink</code></strong>
+                        <ul>
+                            <li>Controls how much an item shrinks relative to others when space is limited.</li>
+                            <li>Default: <code>1</code> (shrinks equally).</li>
+                        </ul>
+                    </li>
+                    <li>
+                        <strong><code>align-self</code></strong>
+                        <ul>
+                            <li>Overrides the container's <code>align-items</code> for one item.</li>
+                            <li>Values: <code>flex-start | center | flex-end</code></li>
+                        </ul>
+                    </li>
+                </ul>
+                <h4>Live Example Code: Flexbox Items</h4>
+                <pre><code>.item-1 {
+                    flex-grow: 2;  /* Takes twice the extra space */
+                    align-self: flex-end;
+                  }
+                  .item-2 {
+                    order: -1;  /* Appears first */
+                  }</code></pre>
+
+                  <div class="live-demo" id="flex-items">
+                    <div class="container-flex-items">
+                      <div class="demo-flex-item demo-default">Default (grow:1)</div>
+                      <div class="demo-flex-item demo-grow">grow:2 + align-self</div>
+                      <div class="demo-flex-item demo-order">order: -1</div>
+                    </div>
+                  </div>
+                  <h4>When to Use:</h4>
+                  <ul class="use-cases">
+                    <li>Creating flexible card layouts</li>
+                    <li>Reordering mobile vs. desktop layouts</li>
+                    <li>Customizing individual items in a navigation bar</li>
+                </ul>
+            </article>
+        </fieldset>
+        </section><br>
+
+<!-- ===== End Of Flexbox Items ===== -->
+
+<!-- ===== Start Of Grid Container ===== -->
+
+        <section class="main-section" id="Grid_Container">
+            <fieldset>
+            <legend><header>Grid Container</header></legend>
+            <article>
+                <p> CSS Grid introduces powerful two-dimensional layout capabilities. 
+                    By defining a <strong>grid container</strong>, 
+                    you create an explicit structure of rows and columns that child items will align to. 
+                    Unlike Flexbox's single-axis approach, Grid gives pixel-perfect control over both dimensions simultaneously.
+                </p>
+                <h4>Key Grid-Container Properties:</h4>
+                <ul>
+                    <li>
+                      <strong><code>grid-template-columns</code></strong>
+                      <ul>
+                        <li>Defines column sizes (e.g., <code>1fr 300px auto</code>)</li>
+                        <li>Special units: <code>fr</code> (fractional), <code>minmax()</code></li>
+                      </ul>
+                    </li>
+                    <li>
+                      <strong><code>grid-template-rows</code></strong>
+                      <ul>
+                        <li>Defines row sizes (e.g., <code>100px auto</code>)</li>
+                      </ul>
+                    </li>
+                    <li>
+                      <strong><code>gap</code></strong>
+                      <ul>
+                        <li>Shorthand for <code>row-gap</code> and <code>column-gap</code></li>
+                      </ul>
+                    </li>
+                  </ul>
+                  <h4>Live Example Code: Grid-Container</h4>
+                  <pre><code>.grid-container {
+                    display: grid;
+                    grid-template-columns: 1fr 2fr; /* Second column twice as wide */
+                    grid-template-rows: 100px auto;
+                    gap: 20px;
+                  }</code></pre>
+
+                  <div class="live-demo grid-demo">
+                    <div class="container-grid-container">
+                      <div class="demo-grid-item header">Header</div>
+                      <div class="demo-grid-item sidebar">Sidebar</div>
+                      <div class="demo-grid-item main-content">Main Content</div>
+                    </div>
+                  </div>
+                  <h4>When to Use:</h4>
+                  <ul class="use-cases">
+                    <li>Building magazine-style layouts</li>
+                    <li>Creating dashboards with multiple panels</li>
+                    <li>Any design requiring precise item placement</li>
+                </ul>
+            </article>
+        </fieldset>
+        </section><br>
+
+<!-- ===== End Of Grid Container ===== -->
+
+<!-- ===== Start Of Grid items ===== -->
+        <section class="main-section " id="Grid_Items">
+            <fieldset>
+            <legend><header>Grid Items</header></legend>
+            <article>
+                <p>
+                    While the grid container defines the overall structure, <strong>grid items</strong> (direct children) 
+                    can be individually positioned and sized. This allows for precise control over item placement 
+                    within the grid.
+                </p>
+            <h4>Key Grid-Item Properties:</h4>
+                <ul class="properties-list">
+                    <li>
+                        <strong><code>grid-column</code></strong>
+                        <ul>
+                            <li>Controls horizontal placement (start/end columns)</li>
+                            <li>Values: <code>1 / 3</code> or <code>span 2</code></li>
+                        </ul>
+                    </li>
+                    <li>
+                        <strong><code>grid-row</code></strong>
+                        <ul>
+                            <li>Controls vertical placement (start/end rows)</li>
+                        </ul>
+                    </li>
+                    <li>
+                        <strong><code>grid-area</code></strong>
+                        <ul>
+                            <li>Shorthand for row/column placement</li>
+                            <li>Can use named grid areas</li>
+                        </ul>
+                    </li>
+                </ul>
+                <h4>Live Example: Grid-Item Placement</h4>
+                <pre><code>.header {
+              grid-column: 1 / -1; /* Full width */
+            }
+            .sidebar {
+              grid-row: 2 / 4; /* Spans two rows */
+            }
+            .featured {
+              grid-area: 1 / 2 / 3 / 4; /* row-start/col-start/row-end/col-end */
+            }</code></pre>
+
+            <div class="live-demo grid-items-demo">
+                <div class="grid-container">
+                  <div class="grid-item header">Header (full-width)</div>
+                  <div class="grid-item sidebar">Sidebar (row-span)</div>
+                  <div class="grid-item content">Content</div>
+                  <div class="grid-item featured">Featured (area)</div>
+                  <div class="grid-item footer">Footer</div>
+                </div>
+              </div>
+            </article>
+        </fieldset>
+        </section><br>
+<!-- ===== Start Of Grid items ===== -->
+
+<!-- ===== Start Of References ===== -->
+<section class="main-section" id="Reference">
+    <fieldset>
+    <legend><header>Reference</header></legend>
+    <article>
+      <p>
+        These official documentation and trusted resources were used in creating this guide:
+      </p>
+  
+      <ul class="reference-list">
+        <li>
+          <strong>MDN Web Docs</strong> - The ultimate CSS reference:
+          <a href="https://developer.mozilla.org/en-US/docs/Web/CSS" target="_blank">CSS: Cascading Style Sheets</a>
+        </li>
+        <li>
+          <strong>CSS-Tricks</strong> - Visual guides to Flexbox and Grid:
+          <ul>
+            <li><a href="https://css-tricks.com/snippets/css/a-guide-to-flexbox/" target="_blank">Complete Flexbox Guide</a></li>
+            <li><a href="https://css-tricks.com/snippets/css/complete-guide-grid/" target="_blank">Complete Grid Guide</a></li>
+          </ul>
+        </li>
+        <li>
+          <strong>W3C Specifications</strong> - Official standards:
+          <a href="https://www.w3.org/TR/css-flexbox-1/" target="_blank">Flexbox</a>, 
+          <a href="https://www.w3.org/TR/css-grid-1/" target="_blank">Grid</a>
+        </li>
+        <li>
+          <strong>Can I Use</strong> - Browser compatibility tables:
+          <a href="https://caniuse.com/flexbox" target="_blank">Flexbox</a>, 
+          <a href="https://caniuse.com/css-grid" target="_blank">Grid</a>
+        </li>
+      </ul>
+  
+      <div class="live-demo">
+        <p><strong>Pro Tip:</strong> Bookmark these resources for quick access while developing!</p>
+      </div>
+    </article>
+</fieldset>
+  </section><br>
+  <!-- ===== End Of References ===== -->
+  <footer>Made By Valentino Wernich.</footer>
+    </main>
+</body>
+</html>
