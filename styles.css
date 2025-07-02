@@ -17,14 +17,7 @@ html {
     background-image: url(background-image.avif);
     background-size: cover;
     background-position: center;
-
-        /* new layout properties */
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: flex-start;
-    padding-left: 8%;
-    padding-right: 8%;
+    position: relative; /* Add this so absolute children work */
 }
 
 nav {
@@ -81,10 +74,10 @@ nav ul li a:hover {
 }
 
 .content {
-    position: relative;
-    left: 0;
-    transform: none;
-    padding-top: 5px; /* optional spacing from nav */
+    position: absolute;
+    top: 50%;
+    left: 8%;
+    transform: translateY(-50%);
 }
 
 h1 {
@@ -493,6 +486,24 @@ body.modal-open {
 
 @media (max-width: 740px) {
     /* Navigation - Mobile Optimized */
+
+        .hero {
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: flex-start;
+        padding-left: 8%;
+        padding-right: 8%;
+        gap: 20px; /* optional spacing */
+        height: calc(var(--vh, 1vh) * 100);
+    }
+    .content {
+        position: relative;
+        left: 0;
+        transform: none;
+        padding-top: 20px; /* optional */
+    }
+    
     nav {
         flex-direction: column;
         padding: 25px 5%;
