@@ -502,6 +502,7 @@ body.modal-open {
     
     /* Hero Section */
     .content {
+        top: 20%;
         left: 5%;
         text-align: justify;
     }
