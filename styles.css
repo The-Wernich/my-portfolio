@@ -554,7 +554,7 @@ body.modal-open {
   }
 
   nav ul li {
-    padding: 10px 0;
+    padding: 10px 2px;
   }
 
   .content {
@@ -593,7 +593,7 @@ body.modal-open {
   }
 
    nav ul li:not(:last-child)::after {
-    right: -10px;  /* Increase the space */
+    right: -5px;  /* Increase the space */
   }
     
   h1 {
