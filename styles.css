@@ -577,28 +577,45 @@ body.modal-open {
 /* Smaller Mobile Devices */
 
 @media (max-width: 480px) {
-    .content {
-        top: 60%; /* tweak this value as needed */
-        left: 5%; /* you already have this for mobile */
-        text-align: justify; /* your existing mobile styles */
-    }
-    h1 {
-        font-size: 40px;
-    }
-    .about-text h2 {
-        font-size: 50px;
-    }
-    .newsletter form textarea {
-        padding: 20px 15px;
-    }
-    .newsletter form input:nth-child(4) {
-        padding: 14px 15px;
-    }
-
-    .newsletter form input:nth-child(5) {
-        padding: 14px 15px;
-    }
+  h1 {
+    font-size: 35px;
+  }
+  h3 {
+    font-size: 16px;
+  }
+  h4 {
+    font-size: 20px;
+  }
+  .title {
+    font-size: 40px;
+  }
+  .about-text h2 {
+    font-size: 50px;
+  }
+  .content {
+    top: 60% !important;  /* tweak vertical alignment */
+    left: 5% !important;
+    text-align: center !important;
+    transform: translateY(-50%) !important;
+  }
+  /* Make contact form inputs and buttons full width for small screens */
+  .newsletter form input[type="email"],
+  .newsletter form textarea,
+  .newsletter form input[type="submit"] {
+    width: 100%;
+    padding: 15px;
+    box-sizing: border-box;
+  }
+  .newsletter form input:last-child {
+    position: relative;
+    top: auto;
+    right: auto;
+    margin: 15px auto 0;
+    width: 100%;
+    display: block;
+  }
 }
+
 
 /* Thank You Pop Up */
 
