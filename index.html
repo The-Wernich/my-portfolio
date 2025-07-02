@@ -27,7 +27,7 @@
         <div id="content" class="content">
             <h4>Hello, my name is</h4>
             <h1>Valentino <span>Wernich</span></h1>
-            <h3>Aspiring Front-end Developer.</h3>
+            <h3>I'm An Aspiring Front-end Developer.</h3>
         </div>
     </div>
 
@@ -61,7 +61,7 @@
             <h5>HTML</h5>
              <div class="par">
                 <p style="text-align: center;">
-                    <a class="button" target="_blank" rel="noopener noreferrer" href="https://en.wikipedia.org/wiki/HTML">Read More</a>
+                    <a class="button" href="https://en.wikipedia.org/wiki/HTML">Read More</a>
                 </p>
             </div>
            </div>
@@ -70,7 +70,7 @@
             <h5>CSS</h5>
             <div class="par">
                 <p style="text-align: center;">
-                    <a class="button" target="_blank" rel="noopener noreferrer" href="https://en.wikipedia.org/wiki/CSS">Read More</a>
+                    <a class="button" href="https://en.wikipedia.org/wiki/CSS">Read More</a>
                 </p>
              </div>
          </div>
@@ -84,7 +84,7 @@
         </div>
         <div class="box2"> 
            <div class="card2">
-            <i class="fas fa-bars"></i>
+            <i class="fa-solid fa-square-poll-horizontal"></i>
             <h5>Gaming Preferences Survey</h5>
             <div class="par">
                 <p>An interactive and responsive HTML survey form designed to collect insights on users gaming habits
@@ -93,12 +93,12 @@
                 </p>
 
                 <p style="text-align: center;">
-                    <a class="button" target="_blank" rel="noopener noreferrer" href="project1/index.html">Visit Site</a>
+                   <a class="button" target="_blank" rel="noopener noreferrer" href="project1/index.html">Visit Site</a>
                 </p>
             </div>
            </div>
            <div class="card2">
-            <i class="fas fa-user"></i>
+            <i class="fa-solid fa-compass-drafting"></i>
             <h5>Technical Document</h5>
             <div class="par">
                 <p>A responsive HTML and CSS technical documentation page exploring CSS Flexbox and Grid layout systems. 
@@ -112,15 +112,15 @@
              </div>
             </div>
             <div class="card2">
-            <i class="fas fa-bell"></i>
-            <h5>Web Development</h5>
+            <i class="fa-solid fa-shop"></i>
+            <h5>Product Landing Page</h5>
             <div class="par">
-                <p>Every website should be built with two primary goals: Firstly, it needs
-                   to work across all devices. Secondly, it needs to be as fast as possible
+                <p>A modern, responsive product landing page built with HTML and custom CSS, showcasing the Samsung Galaxy Watch 6. 
+                   Features include a sticky navigation bar, embedded video, customer reviews, animated product highlights, and a functional purchase form. 
                 </p>
 
                 <p style="text-align: center;">
-                    <a class="button" href="#">Read More</a>
+                    <a class="button" href="#">Visit Site</a>
                 </p>
             </div>
         </div>
@@ -133,7 +133,7 @@
          <div id="query" class="title">
             <h2>Contact Me</h2>
         </div>
-            <form action="https://formsubmit.co/valentino.wernich@outlook.com" method="POST">
+            <form action="https://formsubmit.co/valentino.wernich@outlook.com" method="POST" onsubmit="submitForm(event)">
                     <!-- Hidden fields -->
                     <input type="hidden" name="_subject" value="New Portfolio Message">
                     <input type="hidden" name="_captcha" value="true">
@@ -142,59 +142,53 @@
                     <textarea name="message" placeholder="Enter Your Query" required></textarea>
                     
                     <!-- email field with a default value -->
-                    <input type="email" name="email" placeholder="email@example.com" required>
+                    <input type="email" name="email" placeholder="email@example.com">
                     
                     <input type="submit" value="Lets Start">
                 </form>
             </div>
-    
+
             <!-- Custom Thank You Modal -->
-            <div id="thank-you-modal" class="modal">
-              <div class="modal-content">
-                <h2>Thank you!</h2>
-                <p>Your message has been sent successfully.</p>
-               <button class="close-btn" onclick="closeModal()">Close</button>
-              </div>
-            </div>
-    
+<div id="thank-you-modal" class="modal">
+  <div class="modal-content">
+    <h2>Thank you!</h2>
+    <p>Your message has been sent successfully.</p>
+    <button class="close-btn" onclick="closeModal()">Close</button>
+  </div>
+</div>
+
+
      <!----Footer Start---->
      <footer>
-        <p>Valentino Wernich</p>
+        <p>Valentino <span>Wernich</span></p>
         <p>For more click on the links below....</p>
         <div class="social">
-          <a href="https://facebook.com/yourpage" target="_blank" rel="noopener noreferrer">
-            <i class="fab fa-facebook-f"></i>
-          </a>
-          <a href="https://instagram.com/yourpage" target="_blank" rel="noopener noreferrer">
-            <i class="fab fa-instagram"></i>
-          </a>
-          <a href="https://github.com/yourusername" target="_blank" rel="noopener noreferrer">
-            <i class="fab fa-github"></i>
-          </a>
+            <a href="#"><i class="fab fa-facebook-f"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fa-brands fa-square-github"></i></a>
         </div>
         <P class="end">CopyRight By Valentino Wernich.</P>
      </footer>
 
 <script>
 function submitForm(event) {
-    event.preventDefault();
+  event.preventDefault();
 
-    const form = event.target;
-    const formData = new FormData(form);
+  const form = event.target;
+  const formData = new FormData(form);
 
-fetch("https://formsubmit.co/ajax/valentino.wernich@outlook.com", {
+  fetch("https://formsubmit.co/ajax/valentino.wernich@outlook.com", {
     method: "POST",
     body: formData
-})
-    .then(response => response.json())
-    .then(data => {
+  })
+  .then(response => response.json())
+  .then(data => {
     const modal = document.getElementById("thank-you-modal");
     modal.style.display = "flex"; // Show using flex only
     document.body.classList.add("modal-open");
     form.reset();
-})
-
-.catch(error => {
+  })
+  .catch(error => {
     console.error("Error:", error);
     alert("Oops! Something went wrong. Please try again.");
   });
@@ -206,6 +200,7 @@ function closeModal() {
 }
 
 </script>
-    
+
+
 </body>
 </html>
