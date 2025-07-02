@@ -87,7 +87,7 @@ nav ul li a:hover {
     position: relative;
     left: 0;
     transform: none;
-    padding-top: 20px; /* optional spacing from nav */
+    padding-top: 5px; /* optional spacing from nav */
 }
 
 h1 {
