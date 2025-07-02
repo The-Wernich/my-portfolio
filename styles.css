@@ -27,7 +27,6 @@ html {
     align-items: flex-start;
     padding-left: 8%;
     padding-right: 8%;
-    gap: 5px; /* optional: spacing between nav and content */
 }
 
 nav {
