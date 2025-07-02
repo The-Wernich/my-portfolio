@@ -499,6 +499,7 @@ body.modal-open {
   hyphens: auto;
   box-sizing: border-box; /* prevent overflow due to padding */
   padding: 0 10px; /* small side padding */
+  text-align: center;
 }
 
   .main {
@@ -539,12 +540,6 @@ body.modal-open {
     height: auto; /* avoid fixed height to prevent overflow */
   }
 
-  .title {
-    font-size: 50px;
-    width: 100%;
-    text-align: center;
-  }
-
   nav {
     flex-direction: column;
     padding: 25px 5%;
@@ -561,6 +556,10 @@ body.modal-open {
 
   nav ul li {
     padding: 10px 0;
+  }
+
+  nav ul li:not(:last-child)::after {
+    right: -20px;  /* Increase the space */
   }
 
   .content {
