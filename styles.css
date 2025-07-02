@@ -491,8 +491,8 @@ body.modal-open {
  
 .title {
   width: 90%; /* or 100% */
-  max-width: 1130px; /* keep max width */
-  font-size: 50px; /* smaller on tablet */
+  max-width: 100%; /* keep max width */
+  font-size: 40px; /* smaller on tablet */
   margin: 30px auto;
   overflow-wrap: break-word; /* ensure long words wrap */
   word-wrap: break-word;
@@ -505,6 +505,7 @@ body.modal-open {
     width: 95%;
     max-width: 100%;
     margin: 0 auto;
+    display: flex;
     flex-direction: column; /* stack vertically on tablet */
     align-items: center;
   }
@@ -529,6 +530,7 @@ body.modal-open {
     width: 95%;
     max-width: 100%;
     margin: 0 auto;
+    justify-content: flex-start;
   }
 
   .card1, .card2 {
@@ -591,6 +593,11 @@ body.modal-open {
 /* Smaller Mobile Devices */
 
 @media (max-width: 480px) {
+
+   nav ul li {
+     padding: 12px 5px;
+  }
+    
   h1 {
     font-size: 35px;
   }
@@ -607,7 +614,8 @@ body.modal-open {
     font-size: 50px;
   }
   .content {
-    top: 60% !important;  /* tweak vertical alignment */
+    position: absolute !important;
+    top: 40% !important;  /* tweak vertical alignment */
     left: 5% !important;
     text-align: center !important;
     transform: translateY(-50%) !important;
