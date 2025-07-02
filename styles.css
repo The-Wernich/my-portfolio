@@ -490,43 +490,45 @@ body.modal-open {
         .hero {
         display: flex;
         flex-direction: column;
-        justify-content: center;
+        justify-content: flex-start;
         align-items: flex-start;
         padding-left: 8%;
         padding-right: 8%;
         gap: 20px; /* optional spacing */
         height: calc(var(--vh, 1vh) * 100);
     }
-    .content {
-        position: relative;
-        left: 0;
-        transform: none;
-        padding-top: 20px; /* optional */
-    }
     
     nav {
-        flex-direction: column;
-        padding: 25px 5%;
-        text-align: center;
+        width: 100%; /* so nav spans full width */
+        flex-direction: row; /* keep nav horizontal */
+        justify-content: space-between; /* spread logo and menu */
+        align-items: center;
+        padding-top: 20px; /* space from top */
+        padding-bottom: 10px;
     }
+    
     nav ul {
         display: flex;
         flex-wrap: wrap;
-        justify-content: center;
-        gap: 15px; 
-        padding-top: 20px;
-        margin: 15px auto 0;
-    }
-    nav ul li {
-        padding: 5px 0; 
+        justify-content: flex-end; /* align nav items right */
+        gap: 15px;
+        margin: 0; /* remove auto margin */
+        padding: 0;
     }
     
-    /* Hero Section */
-    .content {
-        padding-top: 25px;
-        left: 5%;
-        text-align: justify;
+    nav ul li {
+        padding: 5px 10px; 
     }
+    
+    .content {
+        position: relative;  /* cancel absolute */
+        left: 0;
+        transform: none;
+        padding-top: 10px;
+        width: 100%; /* full width for mobile */
+        text-align: left;
+    }
+    
     h1 {
         font-size: 50px;
     }
