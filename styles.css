@@ -138,6 +138,7 @@ button {
     color: white;
     text-decoration: none;
     border: 2px solid transparent;
+    box-shadow: 0px 0px 5px #191919, 0px 0px 10px #858585;
     font-weight: bold;
     padding: 13px 30px;
     border-radius: 30px;
@@ -198,6 +199,7 @@ button:hover {
     padding: 9px 22px;
     border-radius: 30px;
     transition: .4s;
+    box-shadow: 0px 0px 5px #191919, 0px 0px 10px #858585;
 }
 
 .card1 .button:hover {
@@ -271,7 +273,8 @@ button:hover {
     font-weight: bold;
     padding: 9px 22px;
     border-radius: 30px;
-    transition: .4s;    
+    transition: .4s; 
+    box-shadow: 0px 0px 5px #191919, 0px 0px 10px #858585;   
 }
 
 .card2 .button:hover {
@@ -333,7 +336,7 @@ button:hover {
     border-radius: 30px;
     background-color: #558f1b;
     color: white;
-    box-shadow: 0px 0px 5px #191919, 0px 0px 15px #858585;
+    box-shadow: 0px 0px 5px #191919, 0px 0px 10px #858585;
     top: 115px;
     right: 20px;
 }
@@ -364,7 +367,7 @@ footer p:nth-child(1) {
     font-weight: bold;
 }
 footer p:nth-child(2) {
-    color: white;
+    color:white;
     font-size: 17px;
     width: 500px;
     text-align: center;
@@ -387,11 +390,14 @@ footer p:nth-child(2) {
     color: white;
     text-decoration: none;
     font-size: 20px;
+    box-shadow: 0px 0px 5px #191919, 0px 0px 10px #858585;
 }
 
 .social a:hover {
+    background-color: #101010;
     transform: scale(1.3);
     transition: .3s;
+    border: 2px solid #558f1b;
 }
 
 .end {
@@ -402,7 +408,80 @@ footer p:nth-child(2) {
 }
 
 
-@media (max-width: 768px) {
+/* Pop Up Styles */
+
+body.modal-open {
+  overflow: hidden;
+}
+
+.modal {
+  display: none; /* Hidden by default */
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0,0,0,0.6); 
+}
+
+.modal-content {
+  background-color: #191919;
+  margin: 0 auto;
+  padding: 30px 20px;
+  border: 2px solid #558f1b;
+  border-radius: 10px;
+  width: 80%;
+  max-width: 400px;
+  text-align: center;
+  position: relative;
+  animation: fadeUp 0.3s ease-out;
+}
+
+.modal-content h2 {
+    color: white;
+    padding-bottom: 10px;
+}
+
+.modal-content p {
+    color: white;
+    padding-top: 10px;
+}
+
+.close-btn {
+  margin-top: 30px;
+  padding: 10px 35px;
+  background-color: #558f1b; 
+  color: white;
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+  font-size: 16px;
+  display: inline-block;
+  transition: background-color 0.3s ease;
+}
+
+.close-btn:hover {
+  background-color: #191919;
+}
+
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+
+@media (max-width: 740px) {
     /* Navigation - Mobile Optimized */
     nav {
         flex-direction: column;
@@ -413,18 +492,18 @@ footer p:nth-child(2) {
         display: flex;
         flex-wrap: wrap;
         justify-content: center;
-        gap: 15px; /* Perfect equal spacing */
+        gap: 15px; 
         padding-top: 20px;
         margin: 15px auto 0;
     }
     nav ul li {
-        padding: 10px 0; /* Preserves your tap target size */
+        padding: 10px 0; 
     }
     
     /* Hero Section */
     .content {
         left: 5%;
-        text-align: center;
+        text-align: justify;
     }
     h1 {
         font-size: 50px;
@@ -432,44 +511,54 @@ footer p:nth-child(2) {
     h3 {
         font-size: 20px;
     }
+    h4 {
+        font-size: 25px;
+    }
     
     /* About Section */
     .main {
         flex-direction: column;
     }
     .about-text {
-        width: 100%;
+        width: 90%;
         margin-top: 30px;
     }
     .about img {
-        width: 100%;
+        width: 90%;
         max-width: 430px;
+        border-radius: 30px;
     }
     
     /* Skills & Projects */
     .box1, .box2 {
         flex-direction: column;
     }
-    .card1, .card2 {
-        width: 90%;
+    .card1 {
+        width: 80%;
         margin: 15px auto;
+    }
+    .card2 {
+        width: 80%;
+        margin: 15px auto;
+        height: 10%;
     }
     .title {
         width: 100%;
         font-size: 50px;
     }
-    
+
     /* Contact Form */
     #contact-me {
         height: auto;
         padding: 60px 0;
     }
+
     .newsletter form input:last-child {
         position: relative;
         top: auto;
-        right: auto;
+        right: -20%;
         margin: 15px auto 0;
-        width: 100%;
+        width: 60%;
     }
     
     /* Footer */
@@ -483,6 +572,7 @@ footer p:nth-child(2) {
 }
 
 /* Smaller Mobile Devices */
+
 @media (max-width: 480px) {
     .content {
         top: 45%;
@@ -499,4 +589,34 @@ footer p:nth-child(2) {
     .newsletter form input:nth-child(4) {
         padding: 14px 15px;
     }
+
+    .newsletter form input:nth-child(5) {
+        padding: 14px 15px;
+    }
+}
+
+/* Thank You Pop Up */
+
+@media (max-width: 480px) {
+  .modal-content {
+    width: 90%;
+    margin-top: 40vh;
+    padding: 20px 15px;
+    border-width: 1px;
+  }
+
+  .modal-content h2 {
+    font-size: 20px;
+  }
+
+  .modal-content p {
+    font-size: 14px;
+  }
+
+  .close-btn {
+    width: 40%;
+    padding: 12px 0;
+    font-size: 15px;
+    margin-top: 20px;
+  }
 }
