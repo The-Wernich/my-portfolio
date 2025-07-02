@@ -558,10 +558,6 @@ body.modal-open {
     padding: 10px 0;
   }
 
-  nav ul li:not(:last-child)::after {
-    right: -20px;  /* Increase the space */
-  }
-
   .content {
     position: relative !important; /* override absolute on desktop */
     left: auto !important;
@@ -595,6 +591,10 @@ body.modal-open {
 
    nav ul li {
      padding: 12px 5px;
+  }
+
+   nav ul li:not(:last-child)::after {
+    right: -20px;  /* Increase the space */
   }
     
   h1 {
