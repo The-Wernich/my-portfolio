@@ -542,14 +542,13 @@ body.modal-open {
 
   nav {
     flex-direction: column;
-    padding: 25px 5%;
+    padding: 25px 2%;
     text-align: center;
   }
 
   nav ul {
     flex-wrap: wrap;
     justify-content: center;
-    gap: 15px;
     padding-top: 20px;
     margin: 15px auto 0;
   }
