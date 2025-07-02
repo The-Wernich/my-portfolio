@@ -101,6 +101,7 @@ h4 {
 .about img {
     height: auto;
     width: 430px;
+    border-radius: 30px;
 }
 .about-text {
     width: 550px;
