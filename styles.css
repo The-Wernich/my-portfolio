@@ -554,7 +554,7 @@ body.modal-open {
   }
 
   nav ul li {
-    padding: 10px 2px;
+    padding: 0px 2px; /*  Just Changed */
   }
 
   nav ul li:not(:last-child)::after {
