@@ -557,6 +557,10 @@ body.modal-open {
     padding: 10px 2px;
   }
 
+  nav ul li:not(:last-child)::after {
+    right: -5px;  /* Increase the space */
+  }
+
   .content {
     position: relative !important; /* override absolute on desktop */
     left: auto !important;
