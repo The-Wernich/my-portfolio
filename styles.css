@@ -488,6 +488,19 @@ body.modal-open {
 
 @media (max-width: 740px) {
   /* Container widths to use max 90-95% vw to avoid horizontal overflow */
+ 
+.title {
+  width: 90%; /* or 100% */
+  max-width: 1130px; /* keep max width */
+  font-size: 50px; /* smaller on tablet */
+  margin: 30px auto;
+  overflow-wrap: break-word; /* ensure long words wrap */
+  word-wrap: break-word;
+  hyphens: auto;
+  box-sizing: border-box; /* prevent overflow due to padding */
+  padding: 0 10px; /* small side padding */
+}
+
   .main {
     width: 95%;
     max-width: 100%;
@@ -511,6 +524,7 @@ body.modal-open {
   }
 
   .box1, .box2 {
+    display: flex;
     flex-direction: column;
     width: 95%;
     max-width: 100%;
