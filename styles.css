@@ -486,7 +486,7 @@ body.modal-open {
 }
 
 
-@media (max-width: 740px) {
+@media (max-width: 820px) {
   /* Container widths to use max 90-95% vw to avoid horizontal overflow */
  
 .title {
@@ -594,7 +594,7 @@ body.modal-open {
   }
 
    nav ul li:not(:last-child)::after {
-    right: -20px;  /* Increase the space */
+    right: -10px;  /* Increase the space */
   }
     
   h1 {
