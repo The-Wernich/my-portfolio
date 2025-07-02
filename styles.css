@@ -497,12 +497,12 @@ body.modal-open {
         margin: 15px auto 0;
     }
     nav ul li {
-        padding: 10px 0; 
+        padding: 5px 0; 
     }
     
     /* Hero Section */
     .content {
-        top: 20%;
+        padding: 20px 0;
         left: 5%;
         text-align: justify;
     }
