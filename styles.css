@@ -576,7 +576,9 @@ body.modal-open {
 
 @media (max-width: 480px) {
     .content {
-        top: 45%;
+        top: 60%; /* tweak this value as needed */
+        left: 5%; /* you already have this for mobile */
+        text-align: justify; /* your existing mobile styles */
     }
     h1 {
         font-size: 40px;
