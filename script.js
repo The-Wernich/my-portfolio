@@ -4,8 +4,11 @@ function submitForm(event) {
   const form = event.target;
   const formData = new FormData(form);
 
-  fetch("https://formsubmit.co/ajax/valentino.wernich@outlook.com", {
+  fetch("https://formspree.io/f/mnnvrzwn", {
     method: "POST",
+    headers: {
+      'Accept': 'application/json'
+    },
     body: formData
   })
   .then(response => {
@@ -21,7 +24,13 @@ function submitForm(event) {
     form.reset();
   })
   .catch(error => {
-    console.error("FormSubmit Error:", error);
+    console.error("Formspree Error:", error);
     alert(`Submission failed: ${error.message}`);
   });
+}
+
+function closeModal() {
+  const modal = document.getElementById("thank-you-modal");
+  modal.style.display = "none";
+  document.body.classList.remove("modal-open");
 }
