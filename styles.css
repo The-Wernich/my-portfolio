@@ -322,7 +322,7 @@ button:hover {
     box-sizing: border-box; /* This is the key line */
 }
 
-.newsletter form input:nth-child(5) {
+.newsletter form input:nth-child(2) {
     display: inline-block;
     width: 100%;
     height: 50px;
