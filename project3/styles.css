@@ -1,0 +1,305 @@
+/* --------------------
+   Global Styles
+--------------------- */
+html, body {
+    margin: 0;
+    padding: 0;
+    min-height: 100%;
+  }
+
+body {
+    background-image: url(background-image.webp);
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    background-attachment: fixed;
+    color: white;
+    font-family: 'Open Sans', sans-serif;
+    font-size: 18px;
+    text-align: center; /* Center the text globally */
+}
+
+/* Dark overlay for better text readability */
+body::before {
+    content: "";
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.35);
+    z-index: -1;
+    pointer-events: none;
+}
+
+/* --------------------
+   Title Styling
+--------------------- */
+#title {
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    padding-top: 2rem; /* Space from the top of the page */
+    margin-bottom: 2rem; /* Space below the title */
+}
+
+#title h1 {
+    margin: 0 auto;
+    line-height: 1.0;
+    font-size: 3rem;
+    max-width: 100%;
+    min-width: 300px;
+
+}
+
+#major {
+    display: block;
+    font-size: 3rem; /* Make font size scale with the viewport width */
+    font-weight: bold;
+}
+
+#minor {
+    display: block;
+    font-size: 2rem; /* Make font size scale with the viewport width */
+    margin-top: -1.5rem;
+}
+
+
+/* --------------------
+   Typography
+--------------------- */
+
+
+
+h1, h2, #final-quote {
+    font-family: 'Playfair Display', serif;
+    color: #ffd700;
+}
+
+cite {
+    color: #777;
+    font-weight: bold;
+}
+
+h1, h2, p, li {
+    text-shadow: 1px 1px 4px rgba(0, 0, 0, 0.6);
+}
+
+/* --------------------
+   Image Styling
+--------------------- */
+img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    border-radius: 10px;
+}
+
+figure {
+    flex: 1;
+    max-width: 100%;
+}
+figcaption {
+    text-align: center;
+    font-size: 1rem;
+    padding: 0 1rem;
+}
+
+/* --------------------
+   Layout Containers
+--------------------- */
+.container-1,
+.container-2 {
+    display: flex;
+    align-items: center; /* Vertically centers content */
+    justify-content: center; /* Horizontally centers content */
+    gap: 2rem;
+    width: 80%;
+    margin: 2rem 0;
+    padding: 1rem;
+    flex-wrap: wrap;
+}
+
+/* ✅ container-1: text left, image right */
+.container-1 {
+    flex-direction: row-reverse;
+}
+
+/* ✅ container-2: image left, text right */
+.container-2 {
+    flex-direction: row;
+}
+
+.everything {
+    padding-left: 10vw;
+}
+
+hr {
+    max-width: 100rem;
+}
+
+/* --------------------
+   Flex Items
+--------------------- */
+#tribute-info,
+#legacy-info{
+    flex: 1 1 45%;
+    min-width: 50%;
+}
+
+#img-div,
+#legacy-img {
+    flex: 1 1 50%;
+    max-width: 100%;
+    size: 100%;
+}
+
+/* --------------------
+   List Section Styling
+--------------------- */
+#tribute-info,
+#legacy-info {
+    text-align: center;
+}
+
+#tribute-info h2,
+#legacy-info h2 {
+    display: inline-block;
+    text-align: center;
+    width: 100%;
+    margin: 0;
+}
+
+#tribute-info ul,
+#legacy-info ul {
+    display: inline-block;
+    text-align: left;
+    margin: 0 auto;
+}
+
+.legacy-text, .tribute-text{
+    margin: 0.5rem 0 1.5rem 0;
+}
+
+.website-1 {
+    text-align: center;
+}
+
+.website-2 {
+    text-align: center;
+    margin-bottom: 5rem;
+    margin-top: 5rem;
+    margin-left: 1rem;
+    margin-right: 1rem;
+}
+
+
+
+/* --------------------
+   Quote Section
+--------------------- */
+#quote {
+    text-align: center;
+    font-style: italic;
+    padding: 2rem;
+    background-color: rgba(255, 255, 255, 0.8);
+    color: #333;
+}
+
+#final-quote {
+    display: block;
+    font-style: italic;
+    font-weight: bold;
+    margin: 2rem auto 0.5rem;
+    max-width: 600px;
+    color: #555;
+}
+
+#final-quote::before,
+#final-quote::after {
+    font-size: 1.5rem;
+    color: #888;
+}
+
+#final-quote::before {
+    content: open-quote;
+    vertical-align: top;
+}
+
+#final-quote::after {
+    content: close-quote;
+    vertical-align: bottom;
+}
+
+/* --------------------
+   Wrapper & Width Constraints
+--------------------- */
+.wrapper {
+    max-width: 100vw;
+    margin: 0 auto;
+    padding: 0 1rem;
+    display: flex;
+    flex-direction: column;
+    align-items: center;  /* Centers all child elements */
+    justify-content: center;
+    text-align: center;
+}
+
+/* Prevent flex items from stretching too far */
+#tribute-info,
+#legacy-info {
+    flex: 1 1 50%;
+}
+
+#img-div,
+#legacy-img {
+    flex: 1 1 45%;
+    max-width: 30rem;
+}
+
+/* --------------------
+   Responsive Behavior
+--------------------- */
+@media (max-width: 768px) {
+    .container-1,
+    .container-2 {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    #tribute-info,
+    #img-div,
+    #legacy-info,
+    #legacy-img {
+        max-width: 100vw;
+        
+    }
+}
+
+@media (max-width: 768px) {
+    #title h1 {
+        font-size: 8vw; /* Adjust font size for smaller screens */
+    }
+
+    #major {
+        font-size: 6vw; /* Adjust for smaller screens */
+    }
+
+    #minor {
+        font-size: 4vw; /* Adjust for smaller screens */
+    }
+}
+
+@media (min-width: 1024px) {
+    #title h1 {
+        font-size: 5vw;
+    }
+
+    #major {
+        font-size: 3.5vw;
+    }
+
+    #minor {
+        font-size: 2vw;
+    }
+}
