@@ -1,4 +1,3 @@
-
 function submitForm(event) {
   event.preventDefault();
 
@@ -9,20 +8,20 @@ function submitForm(event) {
     method: "POST",
     body: formData
   })
-  .then(response => response.json())
+  .then(response => {
+    if (!response.ok) {
+      throw new Error(`HTTP error! status: ${response.status}`);
+    }
+    return response.json();
+  })
   .then(data => {
     const modal = document.getElementById("thank-you-modal");
-    modal.style.display = "flex"; // Show using flex only
+    modal.style.display = "flex";
     document.body.classList.add("modal-open");
     form.reset();
   })
   .catch(error => {
-    console.error("Error:", error);
-    alert("Oops! Something went wrong. Please try again.");
+    console.error("FormSubmit Error:", error);
+    alert(`Submission failed: ${error.message}`);
   });
-}
-
-function closeModal() {
-  document.getElementById("thank-you-modal").style.display = "none";
-  document.body.classList.remove("modal-open");
 }
