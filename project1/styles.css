@@ -1,4 +1,4 @@
-/* ----- Import Fonts ----- */
+I/* ----- Import Fonts ----- */
 @import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@500&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&display=swap');
 
@@ -121,6 +121,9 @@ legend {
   #personal-details > div {
     width: 100%;
   }
+ title {
+   font-size: 10px;
+}
 }
 
 /* ----- Input & Select Styles ----- */
