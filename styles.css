@@ -16,7 +16,7 @@ body, html {
 .hero {
     height: 100vh;
     width: 100%;
-    background-image: url(background-image.avif);
+    background-image: url(assets/background-image.avif);
     background-size: cover;
     background-position: center;
 }
