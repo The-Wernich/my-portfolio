@@ -3,18 +3,12 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta property="og:title" content="Valentino Wernich – Portfolio">
-    <meta property="og:description" content="Explore the creative work and projects of Valentino Wernich.">
-    <meta property="og:image" content="https://the-wernich.github.io/my-portfolio/preview-image.png">
-    <meta property="og:url" content="https://the-wernich.github.io/my-portfolio/">
-    <meta property="og:type" content="website">
     <title>My Portfolio</title>
     <link rel="icon" type="image/png" href="portfolio.png">
     <link rel="stylesheet" href="styles.css">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Josefin+Sans:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
-    <script src="https://formsubmit.co/v1.js" defer></script>
 </head>
 <body>
     <!---Hero Section Start--->
@@ -67,7 +61,7 @@
             <h5>HTML</h5>
              <div class="par">
                 <p style="text-align: center;">
-                    <a class="button" target="_blank" rel="noopener noreferrer" href="https://developer.mozilla.org/en-US/docs/Web/HTML">Read More</a>
+                    <a class="button" target="_blank" rel="noopener noreferrer" href="https://en.wikipedia.org/wiki/HTML">Read More</a>
                 </p>
             </div>
            </div>
@@ -76,7 +70,7 @@
             <h5>CSS</h5>
             <div class="par">
                 <p style="text-align: center;">
-                    <a class="button" target="_blank" rel="noopener noreferrer" href="https://developer.mozilla.org/en-US/docs/Web/CSS">Read More</a>
+                    <a class="button" target="_blank" rel="noopener noreferrer" href="https://en.wikipedia.org/wiki/CSS">Read More</a>
                 </p>
              </div>
          </div>
@@ -119,15 +113,14 @@
             </div>
             <div class="card2">
             <i class="fa-solid fa-shop"></i>
-            <h5>Steve Irwin Tribute Page</h5>
+            <h5>Product Landing Page</h5>
             <div class="par">
-                <p>A responsive and visually engaging HTML and CSS tribute website dedicated to Steve Irwin. 
-                   It features a two-section layout highlighting key life milestones and lasting legacy, enhanced with custom fonts, 
-                   background imagery, flexbox alignment, and media queries for mobile responsiveness. 
+                <p>A modern, responsive product landing page built with HTML and custom CSS, showcasing the Samsung Galaxy Watch 6. 
+                   Features include a sticky navigation bar, embedded video, customer reviews, animated product highlights, and a functional purchase form. 
                 </p>
 
                 <p style="text-align: center;">
-                    <a class="button" target="_blank" rel="noopener noreferrer" href="project3/index.html">Visit Site</a>
+                    <a class="button" href="#">Visit Site</a>
                 </p>
             </div>
         </div>
@@ -141,12 +134,16 @@
             <h2>Contact Me</h2>
         </div>
             <form action="https://formspree.io/f/mnnvrzwn" method="POST" onsubmit="submitForm(event)">
+                <input type="hidden" name="site" value="Front-end Portfolio">
 
                     <!-- Query Field with a default value -->
                     <textarea name="message" placeholder="Enter Your Query" required></textarea>
                     
+                    <!-- Name Field with a default value -->
+                    <input type="name" name="name" placeholder="Jane Doe" required>
+                    
                     <!-- email field with a default value -->
-                    <input type="email" name="email" placeholder="email@example.com" required>
+                    <input type="email" name="email" placeholder="jane.doe@email.com" required>
                     
                     <input type="submit" value="Lets Start">
                 </form>
@@ -167,8 +164,9 @@
         <p>Valentino <span>Wernich</span></p>
         <p>For more click on the links below....</p>
         <div class="social">
-            <a target="_blank" rel="noopener noreferrer" href="https://www.linkedin.com/in/valentino-wernich"><i class="fa-brands fa-linkedin-in"></i></a>
-            <a target="_blank" rel="noopener noreferrer" href="https://github.com/The-Wernich"><i class="fa-brands fa-square-github"></i></a>
+            <a href="#"><i class="fab fa-facebook-f"></i></a>
+            <a href="#"><i class="fab fa-instagram"></i></a>
+            <a href="#"><i class="fa-brands fa-square-github"></i></a>
         </div>
         <P class="end">Valentino Wernich&copy; 2025</P>
      </footer>
