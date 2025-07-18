@@ -38,7 +38,7 @@ h2 {
   position: absolute;
   left: 0;
   right: 0;
-  bottom: -10px;
+  bottom: -30px;
   height: 20px;
   width: 100%;
   background: linear-gradient(to top, rgba(255, 105, 180, 0.3), rgba(225, 105, 180, 0));
@@ -218,6 +218,7 @@ input[type="checkbox"] {
   align-items: center;
   gap: 8px;
   margin-bottom: 10px;
+  flex-wrap: nowrap;
 }
 
 input[type="radio"]:checked + label,
@@ -302,6 +303,232 @@ input:-webkit-autofill {
 }
 
 
+body.modal-open {
+  overflow: hidden;
+}
+
+.modal {
+  display: none; /* Hidden by default */
+  justify-content: center;
+  align-items: center;
+  position: fixed;
+  z-index: 1000;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  overflow: auto;
+  background-color: rgba(0,0,0,0.6); 
+}
+
+.modal-content {
+  background-color: #191919;
+  margin: 0 auto;
+  padding: 30px 20px;
+  border: 2px solid #00cccc;
+  border-radius: 10px;
+  width: 80%;
+  max-width: 400px;
+  text-align: center;
+  position: relative;
+  animation: fadeUp 0.3s ease-out;
+}
+
+.modal-content h2 {
+    color: white;
+    padding-bottom: 10px;
+}
+
+.modal-content p {
+    color: white;
+    padding-top: 10px;
+}
+
+.close-btn {
+  margin-top: 30px;
+  padding: 10px 35px;
+  background-color: #00cccc; 
+  color: white;
+  border: none;
+  border-radius: 30px;
+  cursor: pointer;
+  font-size: 16px;
+  display: inline-block;
+  transition: background-color 0.3s ease;
+}
+
+.close-btn:hover {
+  background-color: #191919;
+    border: 2px solid #00cccc;
+  border-radius: 30px;
+}
+
+
+@keyframes fadeUp {
+  from {
+    opacity: 0;
+    transform: translateY(30px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
 
 
 
+/* ----- Tablets (max-width: 1024px) ----- */
+@media (max-width: 1024px) {
+  .form-wrapper, form {
+    padding: 20px;
+  }
+
+  fieldset {
+    padding: 15px;
+  }
+
+  legend {
+    font-size: 1rem;
+  }
+
+  input[type="text"],
+  input[type="email"],
+  input[type="number"],
+  select,
+  textarea {
+    font-size: 15px;
+    padding: 10px;
+  }
+
+  button[type="submit"] {
+    font-size: 16px;
+    padding: 10px 20px;
+  }
+}
+
+/* ----- Mobile Devices (max-width: 768px) ----- */
+@media (max-width: 768px) {
+  body {
+    padding: 15px;
+  }
+
+  h2, #title {
+    font-size: 1rem;
+    text-align: center;
+  }
+
+  #title {
+    margin: 10px auto;
+    padding: 5px;
+  }
+
+  #title::after {
+    width: 40px;
+    height: 6px;
+    margin: -10px auto 0;
+    box-shadow: 0 0 10px rgba(255, 255, 255, 0.3);
+  }
+
+  .form-wrapper, form {
+    padding: 15px;
+    border-radius: 20px;
+  }
+
+  fieldset {
+    padding: 10px;
+  }
+
+  legend {
+    font-size: 0.9rem;
+  }
+
+  input[type="text"],
+  input[type="email"],
+  input[type="number"],
+  select,
+  textarea {
+    font-size: 14px;
+    padding: 8px;
+  }
+
+  .radio-group div,
+  .checkbox-group div {
+    flex-direction: row;
+    align-items: flex-start;
+  }
+
+  button[type="submit"] {
+    font-size: 14px;
+    padding: 10px 15px;
+  }
+
+  footer span {
+    font-size: 0.8rem;
+  }
+}
+
+/* ----- Very Small Devices (max-width: 480px) ----- */
+@media (max-width: 480px) {
+  h2, #title {
+    font-size: 0.9rem;
+  }
+
+  #title::after {
+    content: "";
+    display: block;
+    width: 350px;              /* Smaller width for small screens */
+    height: 10px;              /* Adjusted height */
+    margin: -10px auto 0;     /* Adjust position to match new layout */
+    background: rgba(255, 255, 255, 0.2);
+    border-radius: 50%;
+    box-shadow: 0 0 12px rgba(255, 255, 255, 0.35); /* Softer glow for mobile */
+  }
+
+  legend {
+    font-size: 0.8rem;
+  }
+
+  button[type="submit"] {
+    width: 100%;
+    font-size: 13px;
+  }
+
+  .checkbox-group div,
+  .radio-group div {
+    gap: 6px;
+    flex-direction: row; /* ✅ Keeps input + label inline */
+    align-items: center;
+  }
+
+  input[type="radio"],
+  input[type="checkbox"] {
+    transform: scale(1.2);
+  }
+
+    .modal-content {
+    width: 90%;
+    margin-top: 40vh;
+    padding: 20px 15px;
+    border-width: 1px;
+  }
+
+  .modal-content h2 {
+    font-size: 20px;
+  }
+
+  .modal-content p {
+    font-size: 14px;
+  }
+
+  .close-btn {
+    width: 40%;
+    padding: 12px 0;
+    font-size: 15px;
+    margin-top: 20px;
+  }
+
+  footer span {
+    display: block;
+    font-size: 0.75rem;
+  }
+}
