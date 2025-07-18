@@ -12,7 +12,7 @@
         <div class="form-wrapper">
         <hr class="top-line">
         <p id="description">Help us understand your gaming habits! Your feedback will help shape future gaming experiences!</p>
-        <form id="survey-form">
+        <form id="survey-form" action="https://formspree.io/f/mnnvrzwn" method="post" onsubmit="submitForm(event)">
 
              <!-- ==================== Personal Details ==================== -->
              <h2>Let's Get To Know You...</h2>
@@ -31,7 +31,7 @@
 
           <div>
            <label id="number-label" for="number">Age:</label>
-           <input id="number" type="number" name="number" min="0" max="100" placeholder="Age" required>
+           <input id="number" type="number" name="age" min="0" max="100" placeholder="Age" required>
           </div>
          </div>
          </fieldset>
@@ -260,9 +260,21 @@
         <hr class="bottom-line">
       </div> 
       </main>
+
+                  <!-- Custom Thank You Modal -->
+      <div id="thank-you-modal" class="modal">
+      <div class="modal-content">
+         <h2>Thank you!</h2>
+         <p>Your message has been sent successfully.</p>
+         <button class="close-btn" onclick="closeModal()">Close</button>
+      </div>
+      </div>
+
       <footer>
          <p><span>Made By Valentino Wernich</span>
         </p>
       </footer>
+
+      <script src="script.js"></script>
     </body>
 </html> 
