@@ -1,0 +1,232 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <meta property="og:title" content="All-in-one-calculator.">
+  <meta property="og:description" content="Convert percentages, weights, distances, and more — all in one clean, responsive calculator by Valentino Wernich.">
+  <meta property="og:image" content="https://the-wernich.github.io/all-in-one-calculator/assets/calculator-preview.jpg">
+  <meta property="og:url" content="https://the-wernich.github.io/all-in-one-calculator/">
+  <meta property="og:type" content="website">
+  <meta property="og:image:width" content="1200" />
+  <meta property="og:image:height" content="630" />
+  <title>All-in-One Calculator</title>
+  <link rel="icon" type="image/png" href="assets/calculator.png">
+  <link rel="stylesheet" href="styles/styles.css" />
+  <!-- Flatpickr CSS -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/flatpickr.min.css" />
+  <!-- Flatpickr Dark Theme -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/flatpickr/dist/themes/dark.css" />
+  <!-- Icons -->
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css" integrity="sha512-Evv84Mr4kqVGRNSgIGL/F/aIDqQb7xQ2vcrdIwxfjThSH8CSR7PBEakCr51Ck+w+/U6swU2Im1vVX0SVk9ABhg==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+</head>
+<body>
+
+  <div class="container">
+    <label class="neon-switch" aria-label="Toggle Dark Mode">
+      <input type="checkbox" id="themeToggle" />
+      <span class="slider"></span>
+    </label>
+    <h1>All-in-One Calculator</h1>
+    <label for="decimalPlaces">Decimal places:</label>
+    <select id="decimalPlaces">
+      <option value="0">0</option>
+      <option value="2" selected>2</option>
+      <option value="4">4</option>
+    </select>
+    <p>Convert percentages, weights, distances, and masses easily</p>
+
+    <div class="calculators-wrapper">
+
+      <!-- Percentage Calculator -->
+      <div class="calculator-box" id="percentage-calculator">
+        <h2>Percentage Calculator</h2>
+
+        <label for="calcType">Choose a calculation:</label>
+        <select id="calcType" onchange="updateLabels()">
+          <option value="percentOf">What is % of #?</option>
+          <option value="whatPercent">X is what % of Y?</option>
+          <option value="increase">Percentage increase/decrease.</option>
+        </select>
+
+        <div class="inputs">
+          <p>
+            <span id="label1">(%):</span>
+            <input type="number" id="input1" placeholder="Enter value" />
+          </p>
+          <p>
+            <span id="label2">(#):</span>
+            <input type="number" id="input2" placeholder="Enter value" />
+          </p>
+        </div>
+
+        <div class="button-row">
+          <button onclick="calculate()">Calculate</button>
+          <button onclick="resetPercentage()">Reset</button>
+        </div>
+        <div id="result"></div>
+      </div>
+
+      <!-- ⚖️ Weight / Volume Converter -->
+      <div class="calculator-box" id="weight-volume-converter">
+        <h2>Weight / Volume Converter</h2>
+          <p>Enter weight to convert:</p>
+        <input type="number" id="weightInput" placeholder="Enter value" />
+
+        <div class="converter-row">
+          <select id="weightFrom">
+            <option value="mg">Milligrams</option>
+            <option value="g">Grams</option>
+            <option value="oz">Ounces</option>
+            <option value="lbs">Pounds</option>
+            <option value="kg">Kilograms</option>
+            <option value="ton">Metric Tons</option>
+          </select>
+          <span class="converter-to">to</span>
+          <select id="weightTo">
+            <option value="ton">Metric Tons</option>
+            <option value="kg">Kilograms</option>
+            <option value="lbs">Pounds</option>
+            <option value="oz">Ounces</option>
+            <option value="g">Grams</option>
+            <option value="mg">Milligrams</option>
+          </select>
+        </div>
+
+        <div class="button-row">
+          <button onclick="convertWeight()">Convert</button>
+          <button onclick="resetWeight()">Reset</button>
+        </div>
+        <div id="weightResult"></div>
+      </div>
+
+      <!-- 📏 Distance Converter -->
+      <div class="calculator-box" id="distance-converter">
+        <h2>Distance Measurement Converter</h2>
+          <p>Enter distance to convert:</p>
+        <input type="number" id="distanceInput" placeholder="Enter value" />
+
+        <div class="converter-row">
+          <select id="distanceFrom">
+            <option value="mm">Millimeters</option>
+            <option value="cm">Centimeters</option>
+            <option value="in">Inches</option>
+            <option value="ft">Feet</option>
+            <option value="yd">Yards</option>
+            <option value="m">Meters</option>
+            <option value="km">Kilometers</option>
+            <option value="mi">Miles</option>
+          </select>
+          <span class="converter-to">to</span>
+          <select id="distanceTo">
+            <option value="mi">Miles</option>
+            <option value="km">Kilometers</option>
+            <option value="m">Meters</option>
+            <option value="yd">Yards</option>
+            <option value="ft">Feet</option>
+            <option value="in">Inches</option>
+            <option value="cm">Centimeters</option>
+            <option value="mm">Millimeters</option>
+          </select>
+        </div>
+
+        <div class="button-row">
+          <button onclick="convertDistance()">Convert</button>
+          <button onclick="resetDistance()">Reset</button>
+        </div>
+        <div id="distanceResult"></div>
+      </div>
+
+      <!-- ➕ Mass Addition -->
+      <div class="calculator-box wide" id="mass-addition">
+        <h2>Mass Addition</h2>
+        <p>Enter comma-separated numbers (e.g. 3, 5, 8):</p>
+
+        <input type="text" id="massAddInput" placeholder="3,5,8" />
+
+        <div class="button-row">
+          <button onclick="calculateMassAddition()">Add</button>
+          <button onclick="resetMassAddition()">Reset</button>
+        </div>
+
+        <div id="massAddResult"></div>
+      </div>
+
+      <!-- ➖ Mass Subtraction -->
+      <div class="calculator-box wide" id="mass-subtraction">
+        <h2>Mass Subtraction</h2>
+        <p>Use a period to set the starting value. Then commas for the rest (e.g. 500.30,40,60):</p>
+
+        <input type="text" id="massSubtractInput" placeholder="500.30,40,60" />
+
+        <div class="button-row">
+          <button onclick="calculateMassSubtraction()">Subtract</button>
+          <button onclick="resetMassSubtraction()">Reset</button>
+        </div>
+        <div id="massSubtractResult"></div>
+      </div>
+
+      <!-- 🗓️ Duration Calculator -->
+      <div class="calculator-box wide" id="duration-calculator">
+        <h2>Duration Calculator</h2>
+        <p>Select from and to date:</p>
+        <label for="startDate">From Date:</label>
+        <input type="text" id="start-date" placeholder="Select start date/time" />
+
+        <label for="endDate">To Date:</label>
+        <input type="text" id="end-date" placeholder="Select end date/time" />
+
+        <div class="button-row">
+          <button onclick="calculateDuration()">Calculate</button>
+          <button onclick="resetDuration()">Reset</button>
+        </div>
+
+        <div id="durationResult"></div>
+      </div>
+    </div>
+
+    <!-- 📬 Contact Form -->
+<div class="contact" id="contact-form">
+  <h2>Contact Me</h2>
+  <p>Have a question or feedback? Send me a message.</p>
+
+  <form action="https://formspree.io/f/mnnvrzwn" method="POST" onsubmit="submitForm(event)">
+      <input type="hidden" name="site" value="All-in-One Calculator">
+    <input type="text" id="name" name="name" placeholder="Your Name" required />
+    <input type="email" id="email" name="email" placeholder="Your Email" required />
+    <textarea id="message" name="message" rows="5" placeholder="Your Message" required></textarea>
+
+    <div class="button-row">
+      <button type="submit">Send Message</button>
+    </div>
+  </form>
+
+   <div id="formStatus"></div>
+  </div>
+
+         <!----Footer Start---->
+    <footer>
+        <p>Valentino <span>Wernich</span></p>
+        <p>For more click on the links below....</p>
+        <div class="social">
+            <a href="https://www.linkedin.com/in/valentino-wernich/" target="_blank"><i class="fa-brands fa-linkedin"></i></a>
+            <a href="https://github.com/The-Wernich/" target="_blank"><i class="fa-brands fa-square-github"></i></a>
+        </div>
+        <P class="end">Valentino Wernich&copy; <span>2025</span></P>
+    </footer>
+
+</div>
+            <!-- Custom Thank You Modal -->
+<div id="thank-you-modal" class="modal">
+  <div class="modal-content">
+    <h2>Thank <span>you</span>!</h2>
+    <p>Your message has been sent successfully.</p>
+    <button class="close-btn" onclick="closeModal()">Close</button>
+  </div>
+</div>
+
+  <!-- Flatpickr JS -->
+  <script src="https://cdn.jsdelivr.net/npm/flatpickr"></script>
+  <script src="scripts/script.js"></script>
+</body>
+</html>
