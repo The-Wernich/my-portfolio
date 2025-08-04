@@ -230,7 +230,8 @@ button:hover {
 .box2 {
     display: flex;
     justify-content: center;
-    align-items: center;
+    align-items: stretch;
+    flex: wrap;
     min-height: 400px;
     padding-bottom: 20px;
 }
@@ -246,6 +247,9 @@ button:hover {
     position: relative;
     overflow: hidden;
     text-align: center;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
 }
 
 .card2 i {
@@ -720,3 +724,4 @@ body.modal-open {
     margin-top: 20px;
   }
 }
+
